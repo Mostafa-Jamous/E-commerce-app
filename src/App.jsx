@@ -9,15 +9,15 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="overflow-hidden bg-gray-400">
-      <Header />
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
+        <Sidebar />
+        <Footer />
       </Router>
-      <Sidebar />
-      <Footer />
     </div>
   );
 };

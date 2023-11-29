@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "./CartItem";
 import { FiTrash2 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
@@ -39,18 +40,18 @@ const Sidebar = () => {
               <FiTrash2 color="white" size={20} />
             </div>
           </div>
-          <a
-            href={"/"}
+          <Link
+            to={"/"}
             className="bg-gray-300 flex p-4 my-3 justify-center hover:bg-gray-400 items-center text-primary w-full font-medium"
           >
             View cart
-          </a>
-          <a
-            href={"/"}
+          </Link>
+          <Link
+            to={"/"}
             className="bg-primary flex p-4 my-3 justify-center hover:bg-primary/80 items-center text-white w-full font-medium"
           >
             Checkout
-          </a>
+          </Link>
         </div>
       )}
     </div>

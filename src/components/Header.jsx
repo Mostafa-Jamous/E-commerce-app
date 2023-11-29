@@ -3,6 +3,7 @@ import logo from "../img/logo.svg";
 import { BsBagFill } from "react-icons/bs";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -24,9 +25,9 @@ const Header = () => {
       }  `}
     >
       <div className="container mx-auto py-3 flex justify-between items-center">
-        <a href="/">
+        <Link to="/">
           <img className="w-10 cursor-pointer" src={logo} alt="" />
-        </a>
+        </Link>
         <div className="relative">
           <BsBagFill
             onClick={() => setIsOpen(!isOpen)}

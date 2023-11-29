@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 export const ProductContext = createContext();
 
@@ -6,9 +7,9 @@ const ProductProvider = ({ children }) => {
 
   useEffect(() => {
     const productsList = async () => {
-      const res = await fetch("https://fakestoreapi.com/products");
-      const data = await res.json();
-      setProducts(data);
+      await axios
+        .get("https://fakestoreapi.com/products")
+        .then((data) => setProducts(data.data));
     };
     productsList();
   }, []);
